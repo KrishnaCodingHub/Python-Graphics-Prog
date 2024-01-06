@@ -26,27 +26,25 @@ t.hideturtle()
 text.hideturtle()
 trl_countdwon.hideturtle()
 newyear_win.setup(width=1.0, height=1.0, startx=None, starty=None)
- #remove close,minimaze,maximaze buttons:
+ #remove close,minimaze,maximaze buttons from python window:
 # canvas = newyear_win.getcanvas()
 # root = canvas.winfo_toplevel()
 # root.overrideredirect(1)
 newyear_win.bgcolor("black")
 colors=['medium blue','blue violet','yellow','green','white','blue','purple','orange','cyan'
 		,'red','magenta','goldenrod']
+
 def play_fireworkmusic():
-	winsound.PlaySound('animalsong.wav', winsound.SND_ASYNC)
+	winsound.PlaySound('New_Year_Greeting_Data\Animal-song.wav', winsound.SND_ASYNC)
+	
 def play_countdown_music():
-	winsound.PlaySound('mixkit-female-countdown.wav', winsound.SND_ASYNC)
+	winsound.PlaySound('New_Year_Greeting_Data\mixkit-female-countdown.wav', winsound.SND_ASYNC)
+	
 def old_year_txt():
 	# Move turtle to air
 	trl_countdwon.up()
-
-	# Move turtle to a given position
-	# trl_countdwon.setpos(-68, 95)
-
 	# Move the turtle to the ground
 	trl_countdwon.down()
-	# text.hideturtle()
 	text.color("green yellow")
 	text.penup()
 	text.sety(250)
@@ -54,17 +52,13 @@ def old_year_txt():
 	# text.write("💖🍬  🎀  𝒢❁❁𝒹 𝐵𝓎𝑒 𝟤💗𝟤𝟥  🎀  🍬💖", font=("None", 30, "bold"), align="center")
 
 
-
 def countdown():
-	win.addshape('countdown_img.gif')
+	win.addshape('New_Year_Greeting_Data\countdown_img.gif')
 	win.title("New Year Greeting Card")
 	img=turtle.Turtle()
-	# win.bgcolor('black')
-	img.shape('countdown_img.gif')
+	img.shape('New_Year_Greeting_Data\countdown_img.gif')
 	old_year_txt()
-
 	countdown=10
-	# trl_countdwon.hideturtle()
 	trl_countdwon.goto(0, -70)
 	trl_countdwon.color("magenta")
 	# Play countdown music
@@ -81,13 +75,6 @@ def countdown():
 
 # create cound screen
 countdown()
-# set background color of the screen
-
-
-
-
-# newyear_win.bgcolor("black")
-
 # obtain current hour, minute and second
 # from the system
 formatted_date = dt.date.today().strftime('%d %b %Y')
@@ -160,16 +147,15 @@ def heart():
 	pen.end_fill()
 
 
-# Defining method to write text
+# Defining method to write happy new year text
 def txt():
-	win.addshape('ganesh2.gif')
+	# win.addshape('New_Year_Greeting_Data\ganesh2.gif')
+	win.addshape('New_Year_Greeting_Data\ganesh2.gif')
 	img = turtle.Turtle()
-	# win.bgcolor('black')
 	img.setpos(-590,300)
-	img.shape('ganesh2.gif')
+	img.shape('New_Year_Greeting_Data\ganesh2.gif')
 	img.setpos(0, 300)
-	img.shape('ganesh2.gif')
-	# text.hideturtle()
+	img.shape('New_Year_Greeting_Data\ganesh2.gif')
 	text.color("orange")
 	text.penup()
 	text.sety(200)
@@ -186,18 +172,10 @@ def animate_text(text):
 	txt_ani.sety(20)
 	while True:
 		txt_ani.speed(500)
-		# txt_ani.goto(-100, 2)
-		# pen.setpos(-100, -10)
-
 		txt_ani.write("\n")
 		txt_ani.color("floral white")
 		# txt_ani.write("💖 Happy\n       New Year\n          2024 💖", font=("Verdana", 15, "bold"))
 		txt_ani.write(text+'\n', font=("Verdana", 15, "bold"))
-
-		# txt_ani.write(text[0:number_of_characters], font=("None", 10,))
-		# number_of_characters += 1
-		# if number_of_characters > len(text):
-		# 	number_of_characters = 0
 		time.sleep(0.3)
 		txt_ani.clear()
 
@@ -220,7 +198,6 @@ for _ in range(100):
 
 # Draw firework
 for _ in range(25):
-	# x,y =random.randint(-600,200), random.randint(-600,200)
 	x, y = random.randint(-680, 680), random.randint(-190, 190)
 	trl_firework.penup()
 	trl_firework.goto(x,y)
@@ -231,17 +208,9 @@ for _ in range(25):
 	# trl_firework.hideturtle()
 
 
-
-
-
-
-# # To hide turtle
-# pen.ht()
-pen.setpos(0, -20)
 # Draw a heart
+pen.setpos(0, -20)
 heart()
-
-
 
 # Main Program Starts Here....
 animate_text("💖 Happy\n       New Year\n          2024 💖")
