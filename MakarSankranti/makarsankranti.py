@@ -17,11 +17,12 @@ tur_line.hideturtle()
 txt_ani.hideturtle()
 kite.hideturtle()
 img=turtle.Turtle()
+
 win = turtle.Screen()
 win2 = turtle.Screen()
 win3 = turtle.Screen()
+
 win.setup(width=1.0, height=1.0, startx=None, starty=None)
-kite.speed(0)
 kite.width(3)
 colors = ['yellow','white','purple','orange','cyan','magenta','pink']
 
@@ -34,6 +35,7 @@ def draw_kite():
         kite.forward(200)
         kite.left(45)
     kite.end_fill()
+
 def draw_thred():
     tur_thrd.hideturtle()
     tur_thrd.pensize(2)
@@ -44,7 +46,6 @@ def draw_thred():
     tur_thrd.pendown()
 
     for thr in range(48):
-        #
         tur_thrd.right(330)
         tur_thrd.forward(10)
         tur_thrd.left(330)
@@ -59,6 +60,7 @@ def draw_line():
     tur_line.setpos(-140,140)
     tur_line.pendown()
     tur_line.circle(-185,100)
+
 def draw_kite_tail():
     tur_kite.hideturtle()
     tur_kite.width(3)
@@ -77,14 +79,12 @@ def draw_kite_tail():
     tur_kite.pendown()
     tur_kite.left(-41)
     tur_kite.forward(280)
+
 def kite_text():
     # number_of_characters = 1
     txt_kite = turtle.Turtle()
 
     txt_kite.hideturtle()
-    # kite.penup()
-    # kite.goto(0, 0)
-    # kite.pendown()
     txt_kite.penup()
     # txt_kiteine.setpos(-140, 140)
     txt_kite.setx(-85)
@@ -111,6 +111,7 @@ def animate_text(text):
         txt_ani.write(msg+'\n', font=("Verdana", 40, "bold"))
         time.sleep(1)
         txt_ani.clear()
+
 def flyimag(x,y):
     img=turtle.Turtle()
     win.addshape("g4.gif")
@@ -176,9 +177,6 @@ def draw_sun(x,y):
 
 def play_music():
     winsound.PlaySound('flykite.wav', winsound.SND_ASYNC)
-
-
-
 
 play_music()
 draw_kite()
