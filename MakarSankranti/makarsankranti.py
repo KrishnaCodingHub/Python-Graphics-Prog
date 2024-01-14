@@ -6,10 +6,6 @@ screen = turtle.Screen()
 # screen.setup(500, 500)
 screen.bgcolor('blue')
 
-# tell screen to not
-# show automatically
-# screen.tracer(0)
-
 kite = turtle.Turtle()
 tur_kite=turtle.Turtle()
 tur_thrd=turtle.Turtle()
@@ -29,14 +25,9 @@ kite.speed(0)
 kite.width(3)
 colors = ['yellow','white','purple','orange','cyan','magenta','pink']
 
-
-
-
-
 def draw_kite():
     kite.color("red")
     kite.fillcolor("yellow")
-
     kite.begin_fill()
     for side in range(4):
         kite.left(45)
@@ -91,6 +82,9 @@ def kite_text():
     txt_kite = turtle.Turtle()
 
     txt_kite.hideturtle()
+    # kite.penup()
+    # kite.goto(0, 0)
+    # kite.pendown()
     txt_kite.penup()
     # txt_kiteine.setpos(-140, 140)
     txt_kite.setx(-85)
@@ -127,6 +121,7 @@ def flyimag(x,y):
     img.pendown()
     img.shape("g4.gif")
     # img.shape("smpp-2.gif")
+
 def fly_bird(x,y):
     img=turtle.Turtle()
     win.addshape("smpp.gif")
@@ -137,6 +132,7 @@ def fly_bird(x,y):
     img.pendown()
     img.shape("smpp.gif")
     # img.shape("smpp-2.gif")
+
 def fly_bird1(x,y):
     win2.addshape("smpp-2.gif")
     img.penup()
@@ -151,6 +147,7 @@ def fly_bird2(x, y):
     img2.goto(x, y)
     img2.pendown()
     img2.shape("smpp-3.gif")
+
 def animate_rocket(x,y):
     tur_sun=turtle.Turtle()
     for i in range(200):
@@ -159,6 +156,7 @@ def animate_rocket(x,y):
         tur_sun.color("yellow")
         tur_sun.forward(80)
         tur_sun.left(3)
+
 def draw_sun(x,y):
     t2=turtle.Turtle()
     t2.hideturtle()
@@ -175,11 +173,12 @@ def draw_sun(x,y):
         t2.left(170)
     t2.end_fill()
     t2.hideturtle()
+
 def play_music():
     winsound.PlaySound('flykite.wav', winsound.SND_ASYNC)
-kite.penup()
-kite.goto(0, 0)
-kite.pendown()
+
+
+
 
 play_music()
 draw_kite()
